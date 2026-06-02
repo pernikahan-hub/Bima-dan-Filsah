@@ -176,6 +176,8 @@ body {
   .hero {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     width: 100%;
@@ -188,28 +190,44 @@ body {
 
   .hero p {
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
   
   .pembuka p {
     color: white;
+    margin: 0;
+    padding: 0;
   }
   
   .penutup p {
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
 
 
   .guestName {
     color: #e50914;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    font-weight: bold;
   }
 
-  .hero img {
+  .hero img#sampul {
+    display: block;
     position: relative;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    width: 200px;
+    width: 150px;
+    height: auto;
+  }
+  
+  img.inisial {
+    display: block;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
     height: auto;
   }
 
@@ -224,23 +242,9 @@ body {
     /* Agar tombol tidak bisa diklik lagi saat transparan */
   }
 
-  .profile-icon {
-    background-image: -webkit-linear-gradient(#e50914, #e50944);
-    /* Prefix untuk Safari */
-    background-image: linear-gradient(#e50914, #e50944);
-    width: 130px;
-    height: 130px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin: 0 auto;
-  }
-
   .buka {
     position: relative;
-    top: 50px;
+    top: 15px;
     padding: 5px;
     font-size: 2rem;
     background-color: grey;
@@ -357,7 +361,7 @@ body {
     height: auto;
     background-color: rgba(30, 30, 30, 0.12);
     /* Menggunakan rgba untuk transparansi */
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     border: 2px grey solid;
   }
 
@@ -746,7 +750,14 @@ body {
     background-repeat: no-repeat;
     opacity: 0;
     animation: fadeIn 3s forwards;
+    color: white;
     /* Menggunakan keyframes */
+    /* Efek Border Font menggunakan text-shadow */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
   }
 
   /* Bagian RSVP */
@@ -1122,12 +1133,6 @@ footer .container {
   @media (min-width: 800px) and (max-width: 800px) and (max-height: 740px) {
 
     /* Aturan CSS yang hanya berlaku untuk lebar layar 800px */
-    .profile-icon {
-      width: 230px;
-      height: 230px;
-      margin-top: 5%;
-      gap: 5rem;
-    }
 
     .profile-icon::before {
       width: 50px;
@@ -1272,12 +1277,6 @@ footer .container {
       margin-top: 100%;
     }
 
-    .profile-icon {
-      width: 230px;
-      height: 230px;
-      gap: 5rem;
-    }
-
     .profile-icon::before {
       width: 50px;
       height: 50px;
@@ -1415,12 +1414,6 @@ footer .container {
 
     .hero img {
       margin-top: 30%;
-    }
-
-    .profile-icon {
-      width: 230px;
-      height: 230px;
-      gap: 5rem;
     }
 
     .profile-icon::before {
@@ -1566,12 +1559,6 @@ footer .container {
       margin-top: 30%;
       width: 100%;
       height: auto;
-    }
-
-    .profile-icon {
-      width: 530px;
-      height: 530px;
-      gap: 7rem;
     }
 
     .profile-icon::before {
@@ -1733,29 +1720,6 @@ footer .container {
       height: auto;
     }
 
-    .profile-icon {
-      width: 530px;
-      height: 530px;
-      gap: 7rem;
-    }
-
-    .profile-icon::before {
-      width: 150px;
-      height: 150px;
-    }
-
-    .profile-icon::after {
-      width: 150px;
-      height: 150px;
-    }
-
-    .smile {
-      width: 200px;
-      height: 95px;
-      margin-top: 12rem;
-      border-bottom: 1rem white solid;
-    }
-
     .buka {
       top: 50px;
       font-size: 4rem;
@@ -1887,15 +1851,10 @@ footer .container {
 </style>
 
 <body>
-  <div id="video-container">
-    <video id="intro-video" controls="controls" autoplay="autoplay" playsinline>
-      <source src="video-intro.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-  </div>
 
 
   <section class="hero">
+    <img class="inisial" src="fixnikah.png" alt="">
     
     <div class="video-bg">
         <video autoplay muted loop playsinline>
@@ -1904,11 +1863,11 @@ footer .container {
     </div>
     
     <img id="sampul" src="img/sampul.jpg" alt="">
-    <br>
     <p> <strong>Assalamualaikum Warahmatullahi Wabarakatuh</strong></p>
-
     <p>Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Teman/Saudara/i</p>
+    <br>
     <p class="guestName">Nama Tamu</p>
+    <br>
     <p style="color: white;">untuk menghadiri acara kami.</p>
     </div>
     
@@ -1918,7 +1877,7 @@ footer .container {
   <section id="cover" class="cover">
     <div class="background-image" id="bg1"></div>
     <div class="background-image" id="bg2"></div>
-    <img src="fixnikah.png" alt="">
+    <img src="fixnikash.png" alt="">
     <div class="box">
       <h2>The Wedding Of <br> Bima & Filsah</h2>
       <p><span class="merah">coming soon </span><span class="tgl">15 Juni 2026</span></p>
@@ -2034,7 +1993,7 @@ footer .container {
           <ul class="list-group">
             <li id="bri" class="list-group-item">
               <br>
-              <div id="Marlisa" class="fw-bold">Mandiri</div>
+              <div id="Filsah" class="fw-bold">Mandiri</div>
               FILSAH NURUL HIDAYAH
               <br>
               <br>
@@ -2551,29 +2510,6 @@ footer .container {
     // Panggil fungsi untuk mengambil ucapan saat DOM dimuat
     fetchWishes();
   </script>
-
-
-  <!-- script vidio intro -->
-  <script>
-  const video = document.getElementById('intro-video');
-  const videoContainer = document.getElementById('video-container');
-  const fadeOutDuration = 2;
-
-  video.addEventListener('ended', () => {
-    // Saat video habis, JANGAN aktifkan scroll dulu
-    videoContainer.style.display = 'none'; 
-  });
-
-  video.addEventListener('timeupdate', () => {
-    const remainingTime = video.duration - video.currentTime;
-    if (remainingTime < fadeOutDuration && remainingTime > 0) {
-      const opacity = remainingTime / fadeOutDuration;
-      videoContainer.style.opacity = opacity;
-    } else if (remainingTime <= 0) {
-      videoContainer.style.display = 'none';
-    }
-  });
-</script>
 
 
   <script>
